@@ -6,9 +6,21 @@
   <title>Performance Review form
 </title>
   <link rel="icon" type="image/png" href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSjxqhopL41jucffDJTIFNRRTPnEhV0jDXuHBHEhGwhKdSTXNby">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f1f5f9;
+      margin: 0;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
     th{
       font-size: 18px;
     }
@@ -105,13 +117,14 @@
       color: red;
       font-weight:400;
     }
+
   </style>
 </head>
 
-<body class="bg-[#f9fafb] min-h-screen flex items-center justify-center px-6 py-16 font-sans text-gray-800">
-  <div class="bg-[#f4f8fd] p-6 rounded-lg shadow-lg mx-auto mt-8 animate-fadeIn">
+<body class="bg-gray-100">
+  <div class="max-w-6xl mx-auto p-4">
    
-    <form action="/api/send" method="post" id="evaluationForm">
+    <form action="/api/send" method="post" id="evaluationForm" class="bg-white p-6 rounded-lg shadow-md">
      <div class="form-container">
     <div class="logo">
       <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSjxqhopL41jucffDJTIFNRRTPnEhV0jDXuHBHEhGwhKdSTXNby" alt="logo">
@@ -120,20 +133,20 @@
     </div>
 
     <section class="mt-5">
-        <h2 class="text-2xl font-bold border-b pb-2 text-gray-700">👤 Employee Details</h2>
+        <h2 class="text-2xl font-bold border-b pb-2 text-rgb(0, 0, 0)">👤 Employee Details</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           <div>
-            <label class="text-gray-500 text-md font-bold">Reviewer Name</label>
+            <label class="text-rgb(0, 0, 0) text-md font-bold">Reviewer Name</label>
             <input name="reviewer_name" type="text" placeholder="Team Lead / Manager" class="mt-2 w-full p-4 rounded-xl border border-gray-300 bg-white/70" />
           </div>
 
           <div>
-            <label class="text-gray-500 text-md font-bold">Employee Name</label>
+            <label class="text-rgb(0, 0, 0) text-md font-bold">Employee Name</label>
             <input name="employee_name" type="text" placeholder="Enter employee name" class="mt-2 w-full p-4 rounded-xl border border-gray-300 bg-white/70" />
           </div>
 
           <div>
-                      <label for="monthlyReview" class="text-gray-500 text-md font-bold">Monthly Review</label>
+                      <label for="monthlyReview" class="text-rgb(0, 0, 0) text-md font-bold">Monthly Review</label>
                       <select id="monthlyReview" name="monthlyReview" required class="mt-2 w-full p-4 rounded-xl border border-gray-300 bg-white/70">
                         <option value="">Select Month</option>
                         <option value="1st Month">1st Month</option>
@@ -142,7 +155,7 @@
                       </select>
           </div>
           <div>
-            <label class="text-gray-500 text-md font-bold">Designation</label>
+            <label class="text-rgb(0, 0, 0) text-md font-bold">Designation</label>
             <input name="designation" type="text" placeholder="Enter designation" class="mt-2 w-full p-4 rounded-xl border border-gray-300 bg-white/70" />
           </div>
           
@@ -151,56 +164,56 @@
 
       <!-- Performance Table -->
       <section class="mt-8">
-        <h2 class="text-2xl font-extrabold border-b pb-2 text-gray-700">📊Performance Evaluation</h2>
+        <h2 class="text-2xl font-extrabold border-b pb-2 text-rgb(0, 0, 0)">📊Performance Evaluation</h2>
         <div class="overflow-x-auto mt-4">
-          <table class="w-full rounded-xl shadow bg-white/70 border border-gray-300 text-sm">
+          <table class="min-w-full text-sm border border-gray-200">
             <thead class="bg-[#f4f8fd] text-indigo-800">
-              <tr>
-                <th class="p-4 text-[#046DAE]">Criteria</th>
-                <th class="p-4 text-[#046DAE]">❌Below Expectation</th>
-                <th class="p-4 text-[#046DAE]">⚠️Needs Improvement</th>
-                <th class="p-4 text-[#046DAE]">✅Satisfactory</th>
-                <th class="p-4 text-[#046DAE]">Comments</th>
+              <tr class="bg-gray-100 text-[#046DAE] text-center">
+                <th class="p-3 border border-gray-200 text-left">Criteria</th>
+                <th class="p-3 border border-gray-200">❌Below Expectation</th>
+                <th class="p-3 border border-gray-200">⚠️Needs Improvement</th>
+                <th class="p-3 border border-gray-200">✅Satisfactory</th>
+                <th class="p-3 border border-gray-200 text-center">Comments</th>
               </tr>
             </thead>
-            <tbody class="divide-y">
-              <tr>
-                <td class="p-3">Work Quality</td>
-                <td class="text-center"><input type="radio" name="work_quality" value="below" /></td>
-                <td class="text-center"><input type="radio" name="work_quality" value="needs" /></td>
-                <td class="text-center"><input type="radio" name="work_quality" value="satisfactory" /></td>
-                <td><input name="work_quality_comment" type="text" class="w-full rounded-xl border border-gray-300 bg-white/70 p-2" /></td>
+            <tbody class="divide-y text-rgb(0, 0, 0)">
+              <tr class="bg-white">
+                <td class="p-3 p-2 border text-rgb(0, 0, 0)">Initiating task (taking ownership)</td>
+                <td class="text-center p-2 border border-gray-200"><input type="radio" name="work_quality" value="below" /></td>
+                <td class="text-center p-2 border border-gray-200"><input type="radio" name="work_quality" value="needs" /></td>
+                <td class="text-center p-2 border border-gray-200"><input type="radio" name="work_quality" value="satisfactory" /></td>
+                <td class="p-2 border border-gray-200"><input name="work_quality_comment" type="text" class="w-full rounded-xl border border-gray-300 bg-white/70 p-2" /></td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="p-3 p-2 border text-rgb(0, 0, 0) border-gray-200">On Time Delivery</td>
+                <td class="text-center p-2 border border-gray-200"><input type="radio" name="productivity" value="below" /></td>
+                <td class="text-center p-2 border border-gray-200"><input type="radio" name="productivity" value="needs" /></td>
+                <td class="text-center p-2 border border-gray-200"><input type="radio" name="productivity" value="satisfactory" /></td>
+                <td class="p-2 border border-gray-200"><input name="productivity_comment" type="text" class="w-full rounded-xl border border-gray-300 bg-white/70 p-2" /></td>
               </tr>
               <tr>
-                <td class="p-3">Productivity</td>
-                <td class="text-center"><input type="radio" name="productivity" value="below" /></td>
-                <td class="text-center"><input type="radio" name="productivity" value="needs" /></td>
-                <td class="text-center"><input type="radio" name="productivity" value="satisfactory" /></td>
-                <td><input name="productivity_comment" type="text" class="w-full rounded-xl border border-gray-300 bg-white/70 p-2" /></td>
-              </tr>
-              <tr>
-                <td class="p-3">Punctuality</td>
+                <td class="p-3 text-rgb(0, 0, 0)">Adaptiveness to new technologies</td>
                 <td class="text-center"><input type="radio" name="punctuality" value="below" /></td>
                 <td class="text-center"><input type="radio" name="punctuality" value="needs" /></td>
                 <td class="text-center"><input type="radio" name="punctuality" value="satisfactory" /></td>
                 <td><input name="punctuality_comment" type="text" class="w-full rounded-xl border border-gray-300 bg-white/70 p-2" /></td>
               </tr>
               <tr>
-                <td class="p-3">Teamwork</td>
+                <td class="p-3 text-rgb(0, 0, 0)">Punctuality</td>
                 <td class="text-center"><input type="radio" name="teamwork" value="below" /></td>
                 <td class="text-center"><input type="radio" name="teamwork" value="needs" /></td>
                 <td class="text-center"><input type="radio" name="teamwork" value="satisfactory" /></td>
                 <td><input name="teamwork_comment" type="text" class="w-full rounded-xl border border-gray-300 bg-white/70 p-2" /></td>
               </tr>
               <tr>
-                <td class="p-3">Initiative</td>
+                <td class="p-3 text-rgb(0, 0, 0)">Team work</td>
                 <td class="text-center"><input type="radio" name="initiative" value="below" /></td>
                 <td class="text-center"><input type="radio" name="initiative" value="needs" /></td>
                 <td class="text-center"><input type="radio" name="initiative" value="satisfactory" /></td>
                 <td><input name="initiative_comment" type="text" class="w-full rounded-xl border border-gray-300 bg-white/70 p-2" /></td>
               </tr>
               <tr>
-                <td class="p-3">Adaptability</td>
+                <td class="p-3 text-rgb(0, 0, 0)">Work Quality</td>
                 <td class="text-center"><input type="radio" name="adaptability" value="below" /></td>
                 <td class="text-center"><input type="radio" name="adaptability" value="needs" /></td>
                 <td class="text-center"><input type="radio" name="adaptability" value="satisfactory" /></td>
@@ -214,26 +227,26 @@
       </section>
 
       <section class="mt-8">
-        <label class="text-2xl font-extrabold border-b pb-2 text-gray-700">💬Comments</label>
+        <label class="text-2xl font-extrabold border-b pb-2 text-rgb(0, 0, 0)0">💬Comments</label>
         <textarea name="supervisor_summary" rows="4" class="w-full rounded-xl mt-4 border border-gray-300 p-4 bg-white/70 focus:outline-none focus:ring-2 focus:ring-indigo-400 resize-none" placeholder="Write overall feedback or summary..."></textarea>
       </section>
 
       <section class="mt-8">
-        <h2 class="text-2xl font-extrabold border-b pb-2 text-gray-700">✅ Final Recommendation</h2>
+        <h2 class="text-2xl font-extrabold border-b pb-2 text-rgb(0, 0, 0)0">✅ Final Recommendation</h2>
         <div class="flex flex-wrap gap-4 mt-4">
           <label class="flex items-center gap-2">
             <input type="radio" name="recommendation" value="confirmation" />
-            <span class="text-base">Confirmation of Employment</span>
+            <span class="text-base text-rgb(0, 0, 0)">Confirmation of Employment</span>
           </label>
           <label class="flex items-center gap-2">
             <input type="radio" name="recommendation" value="extension" />
-            <span class="text-base">Extension of Probation</span>
+            <span class="text-base text-rgb(0, 0, 0)">Extension of Probation</span>
           </label>
         </div>
       </section>
 
       <div class="mt-6">
-        <label class="block text-md font-bold text-gray-600 mb-2">⭐ Overall Rating (out of 10)</label>
+        <label class="block text-md font-bold text-rgb(0, 0, 0) mb-2">⭐ Overall Rating (out of 10)</label>
         <input 
           name="overall_rating"
           type="range" 
@@ -247,7 +260,7 @@
       </div>
 
       <div class="text-center">
-        <button type="submit" class="mt-8 bg-gradient-to-r from-[#046DAE] to-[#024168] hover:from-[#046DAE] hover:to-[#0f766e] text-white text-lg font-semibold py-3 px-10 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95">
+        <button type="submit" class="mt-8 bg-[#046DAE] text-white text-lg font-semibold py-3 px-10 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95">
           🚀 Submit Review
         </button>
       </div>
@@ -339,6 +352,4 @@
     });
   });
 </script>
-
-
 </html>
