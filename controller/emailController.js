@@ -67,12 +67,12 @@ try {
   worksheet.mergeCells('F4:G4');
   worksheet.mergeCells('H4:I4');
 
-  worksheet.getCell('B4').value = 'Work Quality';
-  worksheet.getCell('D4').value = 'Productivity';
-  worksheet.getCell('F4').value = 'Punctuality';
-  worksheet.getCell('H4').value = 'Team Work';
-  worksheet.getCell('J4').value = 'Initiative';
-  worksheet.getCell('L4').value = 'Adaptability';
+  worksheet.getCell('B4').value = 'Initiating task (taking ownership)';
+  worksheet.getCell('D4').value = 'On Time Delivery';
+  worksheet.getCell('F4').value = 'Adaptiveness to new technologies';
+  worksheet.getCell('H4').value = 'Punctuality';
+  worksheet.getCell('J4').value = 'Team work';
+  worksheet.getCell('L4').value = 'Work Quality';
 
   ['B4', 'D4', 'F4', 'H4', 'J4', 'L4'].forEach(cell => {
     worksheet.getCell(cell).font = { bold: true };
