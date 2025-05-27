@@ -142,16 +142,6 @@ try {
 var find_day_noon = '';
 var get_Time = new Date();
 
-var get_Current_Date = get_Time.toLocaleString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
-  second: 'numeric',
-  hour12: true
-});
-
 var hour = get_Time.getHours();
 
 if (hour < 12) {
@@ -161,10 +151,13 @@ if (hour < 12) {
 } else {
   find_day_noon = "Good Evening";
 }
-  
+
+const reviewerEmail = `${reviewer_name.toLowerCase().replace(/\s+/g, '')}@expsoltech.com`;
+
 
   await transporter.sendMail({
     ...mailOptions,
+    cc: reviewerEmail,
     subject: `Performance Review - ${employee_name}`,
     html: `
         <p><strong>Hi ${find_day_noon},</strong>
