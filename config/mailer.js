@@ -11,7 +11,6 @@ const transporter = nodemailer.createTransport({
 const mailOptions = {
   from: 'expsoltechfeedback@gmail.com',
   to: 'velraja@expsoltechs.com',
-  cc:''
 };
 
 module.exports = { transporter, mailOptions };
